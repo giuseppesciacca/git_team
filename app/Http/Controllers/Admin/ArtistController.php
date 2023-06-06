@@ -74,7 +74,7 @@ class ArtistController extends Controller
      */
     public function edit(Artist $artist)
     {
-        //
+        return view('admin.artists.edit', compact('artist'));
     }
 
     /**
@@ -86,7 +86,20 @@ class ArtistController extends Controller
      */
     public function update(UpdateArtistRequest $request, Artist $artist)
     {
-        //
+        $data = [
+            'name' => $request->name,
+            'lastname' => $request->lastname,
+            'stage_name' => $request->stage_name,
+            'date_of_birth' => $request->date_of_birth,
+            'record_label' => $request->record_label,
+            'genre' => $request->genre,
+            'album' => $request->album
+        ];
+
+
+        $artist->update($data);
+
+        return to_route('admin.artists.index')->with('message', 'artist updated successfully');
     }
 
     /**
@@ -97,6 +110,7 @@ class ArtistController extends Controller
      */
     public function destroy(Artist $artist)
     {
-        //
+        $artist->delete();
+        return to_route('admin.artists.index')->with('message', 'artist deleted successfully');
     }
 }
