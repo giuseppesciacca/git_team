@@ -27,7 +27,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.artists.create');
     }
 
     /**
@@ -38,7 +38,21 @@ class ArtistController extends Controller
      */
     public function store(StoreArtistRequest $request)
     {
-        //
+        //dd($request->all());
+        $data = [
+            'name' => $request->name,
+            'lastname' => $request->lastname,
+            'stage_name' => $request->stage_name,
+            'date_of_birth' => $request->date_of_birth,
+            'record_label' => $request->record_label,
+            'genre' => $request->genre,
+            'album' => $request->album
+        ];
+
+
+        Artist::create($data);
+
+        return to_route('admin.artists.index')->with('message', 'artist added successfully');
     }
 
     /**
