@@ -49,7 +49,7 @@ class ArtistController extends Controller
      */
     public function show(Artist $artist)
     {
-        //
+        return view('admin.artists.show', compact('artist'));
     }
 
     /**
