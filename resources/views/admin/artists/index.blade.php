@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="container py-5">
-
+        <h1>Artist</h1> <a name="" id="" class="btn btn-primary" href="{{ route('admin.artists.create') }}"
+            role="button">Create</a>
         <table class="table table-striped">
             <thead>
                 <tr>
