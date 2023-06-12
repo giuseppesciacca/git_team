@@ -12,7 +12,6 @@
                 <th scope="col">Date of birth</th>
                 <th scope="col">Record Label</th>
                 <th scope="col">Genre</th>
-                <th scope="col">Album</th>
             </tr>
         </thead>
 
@@ -25,7 +24,6 @@
                 <td>{{$artist['date_of_birth']}}</td>
                 <td>{{$artist['record_label']}}</td>
                 <td>{{$artist['genre']}}</td>
-                <td>{{$artist['album']}}</td>
             </tr>
 
             @empty

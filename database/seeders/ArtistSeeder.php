@@ -24,7 +24,6 @@ class ArtistSeeder extends Seeder
             $Artist->date_of_birth = $faker->dateTime();
             $Artist->record_label = $faker->company();
             $Artist->genre = $faker->randomElement(['rock', 'jazz', 'reggaeton', 'latino', 'prog']);;
-            $Artist->album = $faker->word(50);
             $Artist->save();
         }
     }

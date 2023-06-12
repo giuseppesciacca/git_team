@@ -10,10 +10,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Artist extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'album_id', 'lastname', 'stage_name', 'date_of_birth', 'record_label', 'genre', 'album'];
+
+    protected $fillable = ['name', 'album_id', 'lastname', 'stage_name', 'date_of_birth', 'record_label', 'genre'];
 
     public function albums(): HasMany      
     {
         return $this->hasMany(Album::class);
     }
+
 }
