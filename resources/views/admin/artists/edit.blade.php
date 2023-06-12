@@ -34,11 +34,6 @@
         </div>
 
         <div class="mb-3">
-            <label for="album" class="form-label">album</label>
-            <input type="text" name="album" id="album" class="form-control" value="{{old('album', $artist->album)}}" placeholder="" aria-describedby="helpId">
-        </div>
-
-        <div class="mb-3">
             <label for="genre" class="form-label">genre</label>
             <input type="text" name="genre" id="genre" class="form-control" value="{{old('genre', $artist->genre)}}" placeholder="" aria-describedby="helpId">
         </div>

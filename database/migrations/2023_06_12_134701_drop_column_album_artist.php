@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('artists', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('artists', function (Blueprint $table) {
+            $table->dropColumn('album');
         });
     }
 
@@ -26,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artists');
+        Schema::table('artists', function (Blueprint $table) {
+            $table->string('album');
+        });
     }
 };
