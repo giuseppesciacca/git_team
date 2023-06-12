@@ -6,6 +6,7 @@ use App\Models\Artist;
 use App\Http\Requests\StoreArtistRequest;
 use App\Http\Requests\UpdateArtistRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Album;
 
 class ArtistController extends Controller
 {
@@ -16,8 +17,12 @@ class ArtistController extends Controller
      */
     public function index()
     {
+
+        $albums = Album::all();
+
         $artists = Artist::all();
-        return view('admin.artists.index', compact('artists'));
+
+        return view('admin.artists.index', compact('artists', 'albums'));
     }
 
     /**
@@ -63,6 +68,7 @@ class ArtistController extends Controller
      */
     public function show(Artist $artist)
     {
+
         return view('admin.artists.show', compact('artist'));
     }
 
