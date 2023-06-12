@@ -32,6 +32,7 @@
                     <a class="btn btn-warning" href="{{ route('admin.artists.edit', $artist->id) }}">
                         EDIT
                     </a>
+                    
 
                     <!-- Modal trigger button -->
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{$artist->id}}">
