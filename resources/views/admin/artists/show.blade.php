@@ -8,7 +8,6 @@
             <div class="card-body">
                 <h4 class="card-title">{{ $artist->name }}</h4>
                 <h4 class="card-title">{{ $artist->lastname }}</h4>
-                <h4 class="card-title">{{ $artist->album }}</h4>
                 <h4 class="card-title">{{ $artist->genre }}</h4>
                 <h4 class="card-title">{{ $artist->date_of_birth }}</h4>
                 <h4 class="card-title">{{ $artist->record_label }}</h4>
