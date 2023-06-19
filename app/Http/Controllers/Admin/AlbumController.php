@@ -18,7 +18,10 @@ class AlbumController extends Controller
      */
     public function index()
     {
+        $albums = Album::all();
 
+
+        return view('admin.albums.index ', compact('albums'));
     }
 
     /**
@@ -70,7 +73,8 @@ class AlbumController extends Controller
      */
     public function edit(Album $album)
     {
-        return view('admin.albums.edit', compact('albums', 'artists'));
+
+        return view('admin.albums.edit', compact('album'));
     }
 
     /**
@@ -82,11 +86,10 @@ class AlbumController extends Controller
      */
     public function update(UpdateAlbumRequest $request, Album $album)
     {
-        $artists = Artist::all();
+        $val_data = $request->validated();
 
-        $albums = Album::orderByDesc('id')->get();
-
-        return view('admin.albums.edit', compact('albums', 'artists'));
+        $album->update($val_data);
+        return to_route('admin.albums.index');
     }
 
     /**
@@ -97,7 +100,7 @@ class AlbumController extends Controller
      */
     public function destroy(Album $album)
     {
-        $album-delete();
-        return to_route('admin.albums.edit')->with('message','Album delted succesfully');
+        $album->delete();
+        return to_route('admin.albums.index')->with('message', 'Album delted succesfully');
     }
 }
