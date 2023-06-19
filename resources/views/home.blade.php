@@ -3,6 +3,12 @@
 @section('content')
 <div class="container py-5">
 
+    <h1>HOME</h1>
+
+    <a name="" id="" class="btn btn-primary" href="{{route('admin.artists.index')}} " role="button">ARTISTS</a>
+    <a name="" id="" class="btn btn-primary" href="{{route('admin.albums.index')}} " role="button">ALBUMS</a>
+
+
     <table class="table table-striped">
         <thead>
             <tr>
